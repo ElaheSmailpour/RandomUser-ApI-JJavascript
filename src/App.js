@@ -13,6 +13,7 @@ function App() {
     console.log("result=", result)
     setQuery("");
     setuserProfile(result.data.results)
+    
   }
   const onsubmitform = (e) => {
     e.preventDefault()
@@ -22,6 +23,7 @@ function App() {
     setQuery(e.target.value)
   }
 
+// {userprofile !==[]&& userprofile.map(profile=><Profile key={uuidv4()} profile={profile}/>)}
 
   return (
     <div className="App">
@@ -29,7 +31,10 @@ function App() {
         <input type="text" placeholder="search" onChange={onchangeInput} value={query} />
         <button>Result</button>
       </form>
-      {userprofile !==[]&& userprofile.map(profile=><Profile key={uuidv4()} profile={profile}/>)}
+     
+        {userprofile !==[]&& userprofile.map(item=>
+          <h2 key={uuidv4()}>{item.name.first}</h2>
+          )}
 
     </div>
   );
