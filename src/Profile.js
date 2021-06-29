@@ -1,7 +1,8 @@
-const Profile=({Profile})=>{
-    return(
+const Profile = ({ user }) => {
+    const { email } = user
+    return (
         <div className="Profile">
-<h1>{Profile}</h1>
+            <h1>{email}</h1>
         </div>
     )
 }

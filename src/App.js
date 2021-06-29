@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 function App() {
   const [query, setQuery] = useState("")
   const [userprofile,setuserProfile]=useState([])
-  const url = `https://randomuser.me/api/?results=${query}`;
+const url = `https://randomuser.me/api/?results=${query}`;
 
   const getData = async () => {
 
@@ -24,7 +24,10 @@ function App() {
   }
 
 // {userprofile !==[]&& userprofile.map(profile=><Profile key={uuidv4()} profile={profile}/>)}
-
+/*
+{userprofile !==[]&& userprofile.map(item=>
+          <h2 key={uuidv4()}>{item.name.first}</h2>
+          )}*/
   return (
     <div className="App">
       <form onSubmit={onsubmitform}>
@@ -32,9 +35,9 @@ function App() {
         <button>Result</button>
       </form>
      
-        {userprofile !==[]&& userprofile.map(item=>
-          <h2 key={uuidv4()}>{item.name.first}</h2>
-          )}
+        
+
+{userprofile !==[]&& userprofile.map(profile=><Profile key={uuidv4()} user={profile}/>)}
 
     </div>
   );
